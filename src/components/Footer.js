@@ -72,30 +72,30 @@ const Footer = () => {
             </button>
           </li>
         </ul>
-        <div className="filters colorFilters">
-          <h5>Filter by Color</h5>
-          <form className="colorSelection">
-            {availableColors.map((color) => {
-              return (
-                <label key={color}>
-                  <input
-                    type="checkbox"
-                    name={color}
-                    checked={colors.includes(color)}
-                    onChange={handleChange}
-                  />
-                  <span
-                    className="color-block"
-                    style={{
-                      backgroundColor: color,
-                    }}
-                  ></span>
-                  {color}
-                </label>
-              )
-            })}
-          </form>
-        </div>
+      </div>
+      <div className="filters colorFilters">
+        <h5>Filter by Color</h5>
+        <form className="colorSelection">
+          {availableColors.map((color) => {
+            return (
+              <div key={color}>
+                <input
+                  type="checkbox"
+                  name={color}
+                  checked={colors.includes(color)}
+                  onChange={handleChange}
+                />
+                <span
+                  className="color-block"
+                  style={{
+                    backgroundColor: color,
+                  }}
+                ></span>
+                {color}
+              </div>
+            )
+          })}
+        </form>
       </div>
     </footer>
   )
